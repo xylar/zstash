@@ -170,7 +170,7 @@ msg += ' for testing zstash extract/check with parallel.'
 print(msg)
 write_file('zstash_test/file3.txt', 'file3 stuff')
 os.chdir('zstash_test')
-cmd = 'zstash update --hpss={}'.format(HPSS_PATH)
+cmd = 'zstash add --hpss={} {}'.format(HPSS_PATH,'file3.txt')
 output, err = run_cmd(cmd)
 os.chdir('../')
 write_file('zstash_test/file4.txt', 'file4 stuff')

@@ -5,6 +5,7 @@ import argparse
 import os.path
 import sys
 from . import settings, __version__
+from .add import add
 from .create import create
 from .update import update
 from .extract import extract
@@ -23,6 +24,7 @@ Available zstash commands:
   version    print the version of zstash
   create     create new archive
   update     update existing archive
+  add        add specified files to existing archive
   extract    extract files from archive
   chgrp      change the group of an archive
   check      check the integrity of the files in the archive
@@ -43,6 +45,8 @@ For help with a specific command
         create()
     elif args.command == 'update':
         update()
+    elif args.command == 'add':
+        add()
     elif args.command == 'extract':
         extract()
     elif args.command == 'chgrp':
